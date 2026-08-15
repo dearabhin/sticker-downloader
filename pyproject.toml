@@ -1,0 +1,23 @@
+[project]
+name = "sticker-downloader"
+version = "0.1.0"
+description = "Convert LINE/KakaoTalk sticker packs to Telegram animated stickers, or export a whole pack as transparent-background GIFs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+dependencies = [
+    "sticker-convert>=2.21",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "Pillow"]
+
+[project.scripts]
+sticker-downloader = "sticker_downloader.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sticker_downloader*"]
